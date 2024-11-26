@@ -1,0 +1,17 @@
+services: 
+  # docker run -d --name web1 --net mynetwork jmalloc/echo-server
+  web:
+    image: jmalloc/echo-server
+
+  # docker run -d --name haproxy --net mynetwork \
+  # -v $(pwd)/config:/usr/local/etc/haproxy:ro \
+  # -p 80:80 \
+  # haproxytech/haproxy-alpine:2.4
+  haproxy:
+    image: haproxytech/haproxy-alpine:2.7
+    volumes: 
+      - "./config:/usr/local/etc/haproxy:ro"
+    ports:
+      - "80:80"
+    depends_on: 
+      - web

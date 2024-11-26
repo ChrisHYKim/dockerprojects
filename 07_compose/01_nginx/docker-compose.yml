@@ -1,0 +1,9 @@
+---
+name: some-nginx
+# docker run --name  -v /some/content:/usr/share/nginx/html:ro -d nginx
+services:
+  web: 
+    # container-name 자동으로 생성하도록 한다.
+    image: nginx 
+    volumes: 
+      - "/some/content:/usr/share/nginx/html:ro"

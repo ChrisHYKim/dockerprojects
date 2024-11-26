@@ -1,0 +1,7 @@
+---
+#  docker run --name some-nginx -d -p 8080:80 some-content-nginx
+services:
+  web:
+    image: nginx
+    ports: 
+      - "8080:80"

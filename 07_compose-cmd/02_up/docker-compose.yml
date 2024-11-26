@@ -1,0 +1,13 @@
+services:
+  server_a:
+    image: nginx
+    networks:
+      default: null
+  server_b:
+    image: redis
+    networks:
+      default: null
+
+networks:
+  default:
+    name: 02_up_default
